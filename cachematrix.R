@@ -1,15 +1,15 @@
-## This pair of functions take an invertible matrix, solves for its inverse and stores the
+## This pair of functions takes an invertible matrix, solves for its inverse and stores the
 ## result as a cache. Then if the calculation needs to be perfomed again, the original result
 ## can simply be retrieved from the cache. Since matrix inversion is a costly computation,
 ## this is good practise.
 
 
-## We provide makeCacheMatrix with an invertible matrix and it creates a list of functions
-## to cache and call the matrix and its inverse.  
+## We provide makeCacheMatrix with an invertible matrix and it creates a "vector" of functions
+## to cache and call the matrix and its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
   I <- NULL
-  ## The set function allows a user to interactively reset the cached of the original 
+  ## The set function allows a user to interactively reset the cache of the original 
   ## matrix without calling makeCacheMatrix again.
   set <- function(y){
     x <<- y
