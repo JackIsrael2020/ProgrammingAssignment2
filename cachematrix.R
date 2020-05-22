@@ -42,7 +42,8 @@ cacheSolve <- function(x, ...) {
   }
   data <- x$get() 
   I <- solve(data, ...) ## If not, we call the original matrix using get() and solve
-  ## for its inverse. Then we set
+  ## for its inverse. Then we use setInverse to cache the calculated result for
+  ## future retrieval.
   x$setInverse(I)
   I
 }
